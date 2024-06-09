@@ -1,0 +1,67 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+
+<h2>Все заказы</h2>
+
+    {% if orders %}
+
+            {% for order in orders %}
+<div class="order">
+    <h3>Заказ №{{ order.id }}</h3>
+    <div class="order-info">
+        <p>Пользователь: {{ order.user.username }}</p>
+        <p>Дата создания: {{ order.created_at }}</p>
+        <p>Статус: {{ order.get_status_display }}</p>
+        <p>Адрес: {{ order.address }}</p>
+        <p>Имя: {{ order.name }}</p>
+        <p>Почта: {{ order.email }}</p>
+        <p>Номер телефона: {{ order.phone_number }}</p>
+    </div>
+
+    <h4>Товары в заказе:</h4>
+
+    
+    <p>
+        
+        <div class="order-items">
+            {% for item in order.orderitem_set.all %}
+            <p>
+                {{ item.product.name }} - {{ item.quantity }} шт.
+                {% if item.product.discount > 0 %}
+                Цена со скидкой: <span class="discount-price">{{ item.discounted_price|floatformat:2 }}</span> (скидка {{ item.product.discount|floatformat:0 }}%)
+                Старая цена: {{ item.product.price }}
+                {% else %}
+                Цена: {{ item.product.price }}
+                {% endif %}
+
+            </p>
+            {% endfor %}
+        </div>
+
+        <div class="order-total">
+            Итоговая стоимость: {{ order.total_price }}
+        </div>
+
+        <form method="post" action="{% url 'change_order_status' order.id %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <select name="status" class="form-control">
+                    {% for choice in order.STATUS_CHOICES %}
+                    <option value="{{ choice.0 }}" {% if choice.0 == order.status %}selected{% endif %}>
+                        {{ choice.1 }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Изменить статус</button>
+        </form>
+</div>
+            {% endfor %}
+
+    {% else %}
+<p>Пока нет заказов.</p>
+    {% endif %}
+
+
+{% endblock %}

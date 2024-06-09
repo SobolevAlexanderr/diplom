@@ -1,0 +1,104 @@
+{% extends "app/layout.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container about-us">
+    <div class="row">
+        <div class="col-md-8 bordered-block">
+            <h3>Псковский центр деревянных строений</h3>
+            <p>
+                На строительном рынке Пскова наша компания работает с 2007 г.
+                Делаем фундаменты, монтируем срубы, облицовываем,
+                благоустраиваем дома под ключ! Также специализируемся
+                на проектировании и строительстве каркасных домов,
+                домов из профилированного бруса, каркасных бань, бань из
+                профилированного бруса, беседок и хоз. блоков.
+            <p>
+                Индивидуальный подход к каждому клиенту.
+                Также можете заказать товар на вывоз,
+                с доставкой до дома, по телефону или по электронной почте,
+                или сделать заявку на сайте.
+            </p>
+        </div>
+        <div class="col-md-4 bordered-block">
+            <h3>Почему мы?</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Профессиональное качество</li>
+                <li class="list-group-item">Быстрые сроки</li>
+                <li class="list-group-item">Доставка по Пскову</li>
+                <li class="list-group-item">Доставка по России</li>
+                <li class="list-group-item">Сезонные скидки</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Также мы занимаемся</h2>
+            <p>
+                Наша компания занимается проектированием и строительством каркасных домов, домов из профилированного бруса, каркасных бань, бань из
+                профилированного бруса, беседок и хоз. блоков.
+            </p>
+            <p>
+                Индивидуальный подход к каждому клиенту. Также можете заказать товар на вывоз, с доставкой до дома, по телефону или по электронной почте,
+                или сделать заявку на сайте.
+            </p>
+        </div>
+    </div>
+
+    <div class="row team">
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'app/content/павел.jpg' %}" alt="Павел Николаевич" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Павел Николаевич</h4>
+                    <p class="card-text">Директор</p>
+                    <p class="card-text">Всегда в хорошем расположении духа, очень активен и внимателен.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'app/content/мария.jpg' %}" alt="Мария Николаевна" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Мария Николаевна</h4>
+                    <p class="card-text">Менеджер</p>
+                    <p class="card-text">С радостью ответит на все ваши вопросы.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'app/content/сергей.jpg' %}" alt="Сергей Петрович" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Сергей Петрович</h4>
+                    <p class="card-text">Инженер-проектировщик</p>
+                    <p class="card-text">Поможет сделать ваш индивидуальный проект.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <img src="{% static 'app/content/виктор.jpg' %}" alt="Виктор Анатольевич" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="card-title">Виктор Анатольевич</h4>
+                    <p class="card-text">Мастер</p>
+                    <p class="card-text">Под его руководством ваш проект обретет жизнь.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>
+                По желанию заказчика ведем монтаж фундамента, монтируем срубы, облицовываем, благоустраиваем дома, бани, хозблоки.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+.order {
+	border: 1px solid #ddd;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.order-info, .order-items, .order-total {
+	margin-bottom: 15px;
+}
+
+	.order-items p {
+		margin-bottom: 5px;
+	}
+
+.form-group {
+	margin-bottom: 10px;
+}
+}

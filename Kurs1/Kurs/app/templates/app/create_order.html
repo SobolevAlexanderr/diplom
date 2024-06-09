@@ -1,0 +1,22 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<h2>Оформление заказа</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <!-- Возможно, здесь нужно добавить форму для указания дополнительной информации о заказе -->
+
+    <button type="submit">Оформить заказ</button>
+</form>
+
+<h3>Товары в корзине:</h3>
+<ul>
+    {% for cart_item in cart %}
+    <li>{{ cart_item.product.name }} - {{ cart_item.quantity }} шт.</li>
+    {% endfor %}
+</ul>
+
+<p>Итоговая цена: {{ cart.get_total_price }}</p>
+{% endblock %}

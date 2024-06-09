@@ -1,0 +1,17 @@
+
+
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+
+
+{% load static%}
+<div>
+    <p><b>dns</b><a href="https://www.dns-shop.ru/" target="_blank"> <img src="{% static 'app/content/icond.png' %}" alt="Logo 1" /></a></p>
+    <p><b>mvideo</b><a href="https://www.mvideo.ru" target="_blank"> <img src="{% static 'app/content/iconm.png' %}" alt="Logo 2" /></a></p>
+    <p><b>ozon</b><a href="https://www.ozon.ru/category/bytovaya-tehnika-10500/" target="_blank"> <img src="{% static 'app/content/icona.png' %}" alt="Logo 3" /></a></p>
+</div>
+
+{% endblock %}

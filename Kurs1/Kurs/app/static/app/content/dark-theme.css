@@ -1,0 +1,20 @@
+/* dark-theme.css */
+body {
+    background-color: #333;
+    color: #4cff00; /* Измените цвет текста на светло-серый */
+}
+
+.navbar {
+    background-color: #555;
+}
+
+/* Другие стили для элементов в темной теме */
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" / > {
+    % if dark_mode %
+}
+
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/dark-theme.css' %}" / > {
+    % endif %
+}
+
+

@@ -1,0 +1,90 @@
+{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+
+
+<br>
+<h2>Отправте пожалуйста отзыв о сайте</h2>
+<br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <label for="{{form.name.id_for_label}}">{{form.name.label}}:</label>
+        {{form.name}}<br><br>
+        <label for="{{form.city.id_for_label}}">{{form.city.label}}:</label>
+        {{form.city}}<br><br>
+        <label for="{{form.gender.id_for_label}}">{{form.gender.label}}:</label>
+        {{form.gender}}<br><br>
+        <label for="{{form.disain.id_for_label}}">{{form.disain.label}}:</label>
+        {{form.disain}}<br><br>
+        <label for="{{form.tehnik.id_for_label}}">{{form.tehnik.label}}:</label>
+        {{form.tehnik}}<br><br>
+        <label for="{{form.email.id_for_label}}">{{form.email.label}}:</label>
+        {{form.email}}<br><br>
+        <label for="{{form.notice.id_for_label}}">{{form.notice.label}}:</label>
+        {{form.notice}}<br><br>
+        <label for="{{form.polza.id_for_label}}">{{form.polza.label}}:</label>
+        {{form.polza}}<br><br>
+        <label for="{{form.nedostatki.id_for_label}}">{{form.nedostatki.label}}:</label>
+        {{form.nedostatki}}<br><br>
+        <input type="submit" value="Отправить" id="sub">
+
+    </form>
+
+</div>
+<script>
+    const elem = document.getElementById('sub');
+    elem.addEventListener('mouseover', function () {
+        elem.style.color = 'orange';
+
+    });
+    elem.addEventListener('mouseout', function () {
+        elem.style.color = 'green'
+    });
+
+    const elem2 = document.getElementById('id_name');
+    elem2.addEventListener('mouseover', function () {
+        elem2.style.backgroundColor = 'orange';
+
+    });
+    elem2.addEventListener('mouseout', function () {
+        elem2.style.backgroundColor = 'green'
+    });
+    const elem3 = document.getElementById('id_city');
+    elem3.addEventListener('mouseover', function () {
+        elem3.style.backgroundColor = 'orange';
+
+    });
+    elem3.addEventListener('mouseout', function () {
+        elem3.style.backgroundColor = 'green'
+    });
+    const elem4 = document.getElementById('id_disain');
+    elem4.addEventListener('mouseover', function () {
+        elem4.style.backgroundColor = 'orange';
+
+    });
+    elem4.addEventListener('mouseout', function () {
+        elem4.style.backgroundColor = 'green'
+    });
+</script>
+{% else %}
+
+<br>
+<h2>Благодарим за предоставленную информацию!</h2>
+<h3>Вы сообщили следущее:</h3>
+<ul>
+    <li><span>Имя:</span>{{data.name}}</li>
+    <li><span>Город:</span>{{data.city}}</li>
+    <li><span>Пол:</span>{{data.gender}}</li>
+    <li><span>Дизан:</span>{{data.disain}}</li>
+    <li><span>Польза:</span>{{data.polza}}</li>
+    <li><span>Недостатки:</span>{{data.nedostatki}}</li>
+    <li><span>email:</span>{{data.tehnik}}</li>
+    <li><span>Рассылка:</span>{{data.notice}}</li>
+
+
+
+</ul>
+{% endif %}
+{% endblock %}
+

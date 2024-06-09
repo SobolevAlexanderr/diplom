@@ -1,0 +1,154 @@
+{% extends "app/layout.html" %}
+
+{% block head %}
+    {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/styles.css' %}" />
+{% endblock %}
+
+{% block content %}
+<div class="cart-container">
+    <h1>Ваша корзина</h1>
+
+    {% for item in cart %}
+    <div class="cart-item">
+        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="cart-item-image">
+        <div class="cart-item-details">
+            <p class="cart-item-name">{{ item.product.name }}</p>
+            <p>Количество: {{ item.quantity }}</p>
+            <p>
+                {% if item.product.discount > 0 %}
+                Цена со скидкой: {{ item.price }} (скидка {{ item.product.discount|floatformat:0 }}%)
+                Старая цена: {{ item.product.price }}
+                {% else %}
+                Цена: {{ item.price }}
+                {% endif %}
+            </p>
+        </div>
+        <div class="cart-item-actions">
+            <a href="{% url 'remove_from_cart' item.product.id %}" class="cart-action-link">Удалить</a>
+            <a href="{% url 'decrement_item' item.product.id %}" class="cart-action-link">Уменьшить</a>
+            <a href="{% url 'increment_item' item.product.id %}" class="cart-action-link">Увеличить</a>
+        </div>
+    </div>
+    {% endfor %}
+
+    <p class="cart-summary">Итого товаров в корзине: {{ cart|length }}</p>
+    <p class="cart-summary">Общая стоимость: {{ cart.get_total_price }}</p>
+</div>
+<button type="button" class="btn btn-primary" id="checkoutBtn">
+    Оформить заказ
+</button>
+
+<!-- Модальное окно для оформления заказа -->
+<div class="modal" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderModalLabel">Оформление заказа</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Сообщение об ошибке -->
+                <div id="error-message" style="color: red; display: none;">Нет товара в корзине.</div>
+                <!-- Сообщение об ошибке валидации формы -->
+                <div id="form-error-message" style="color: red; display: none;"></div>
+                <!-- Форма оформления заказа -->
+                <form method="post" action="{% url 'create_order' %}" id="orderForm">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="address">Адрес:</label>
+                        <input type="text" class="form-control" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Имя:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Почта:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone_number">Номер телефона:</label>
+                        <input type="tel" class="form-control" id="phone_number" name="phone_number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Оформить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Получаем элементы
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const orderModal = document.getElementById('orderModal');
+    const errorMessage = document.getElementById('error-message');
+    const formErrorMessage = document.getElementById('form-error-message');
+    const closeBtn = document.querySelector('.close');
+    const orderForm = document.getElementById('orderForm');
+    const addressInput = document.getElementById('address');
+    const phoneNumberInput = document.getElementById('phone_number');
+
+    // Добавляем обработчик события клика на кнопку "Оформить заказ"
+    checkoutBtn.addEventListener('click', function (event) {
+        event.preventDefault();  // Предотвращаем переход по ссылке
+        if ({{ cart|length }} === 0) {
+            errorMessage.style.display = 'block';  // Показываем сообщение об ошибке
+        } else {
+            errorMessage.style.display = 'none';  // Скрываем сообщение об ошибке
+            orderModal.style.display = 'block';  // Показываем модальное окно
+        }
+    });
+
+    // Добавляем обработчик события клика на кнопку закрытия
+    closeBtn.addEventListener('click', function () {
+        orderModal.style.display = 'none';  // Скрываем модальное окно
+    });
+
+    // Добавляем обработчик события клика вне модального окна
+    window.onclick = function (event) {
+        if (event.target === orderModal) {
+            orderModal.style.display = 'none';  // Скрываем модальное окно
+        }
+    }
+
+    // Добавляем обработчик события отправки формы
+    orderForm.addEventListener('submit', function(event) {
+        const cartLength = {{ cart|length }};
+        const address = addressInput.value;
+        const phoneNumber = phoneNumberInput.value;
+
+        let valid = true;
+        let errorMessageText = '';
+
+        if (cartLength === 0) {
+            valid = false;
+            errorMessageText = 'Нет товара в корзине.';
+        }
+
+        if (address.length < 5) {
+            valid = false;
+            errorMessageText += '<br>Адрес должен содержать минимум 5 символов.';
+        }
+
+        if (!/^\d{11}$/.test(phoneNumber)) {
+            valid = false;
+            errorMessageText += '<br>Номер телефона должен содержать ровно 11 цифр и не должен содержать букв.';
+        }
+
+        if (!valid) {
+            event.preventDefault();  // Предотвращаем отправку формы
+            formErrorMessage.innerHTML = errorMessageText;
+            formErrorMessage.style.display = 'block';  // Показываем сообщение об ошибке
+        } else {
+            formErrorMessage.style.display = 'none';  // Скрываем сообщение об ошибке
+        }
+    });
+</script>
+{% endblock %}

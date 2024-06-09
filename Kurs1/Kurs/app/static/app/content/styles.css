@@ -1,0 +1,855 @@
+
+
+
+footer {
+    text-align: center; /* Центрируем текст */
+}
+
+    footer p {
+        margin-bottom: 0; /* Убираем отступ снизу от последнего параграфа */
+    }
+
+/* custom_layout.css (или добавьте эти стили в существующий файл CSS) */
+
+/* custom_footer.css */
+/* ... (другие стили) ... */
+
+html, body {
+    height: 100%;
+    margin: 0;  /* Убираем отступы по умолчанию */
+}
+
+body {
+    display: flex;
+    flex-direction: column;  /* Располагаем элементы в столбец */
+}
+
+.container.body-content {
+    flex: 1 0 auto;  /* Контейнер body-content занимает оставшееся пространство */
+}
+
+footer {
+    flex-shrink: 0;  /* Футер не сжимается */
+}
+.small-image {
+    width: 50px; /* Устанавливаем ширину изображения */
+    height: auto; /* Высота будет автоматически подстраиваться под ширину */
+}
+
+
+
+
+
+
+
+
+/* Стили для страницы "О нас" */
+.about-us {
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+    .about-us h2 {
+        margin-bottom: 15px;
+    }
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.team {
+    margin-top: 30px;
+}
+
+    .team img {
+        margin-bottom: 10px;
+    }
+
+    .team h4 {
+        margin-top: 0;
+    }
+/* Стили для границ */
+.bordered-block {
+    border: 1px solid #ddd; /* Серый цвет границы */
+    padding: 20px; /* Отступы внутри блока */
+    margin-bottom: 20px; /* Отступ снизу блока */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.team .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+.col-md-12 {
+    margin-top: 30px;
+}
+
+
+
+.product-images {
+    display: flex;
+}
+
+.main-image {
+    width: 300px; /* пример */
+    height: auto;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail-image {
+    width: 50px; /* пример */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    display: none;
+}
+
+    .carousel-item.active {
+        display: block;
+    }
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+}
+
+
+footer {
+    text-align: center; /* Центрируем текст */
+}
+
+    footer p {
+        margin-bottom: 0; /* Убираем отступ снизу от последнего параграфа */
+    }
+
+/* custom_layout.css (или добавьте эти стили в существующий файл CSS) */
+
+/* custom_footer.css */
+/* ... (другие стили) ... */
+
+html, body {
+    height: 100%;
+    margin: 0; /* Убираем отступы по умолчанию */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы в столбец */
+}
+
+.container.body-content {
+    flex: 1 0 auto; /* Контейнер body-content занимает оставшееся пространство */
+}
+
+footer {
+    flex-shrink: 0; /* Футер не сжимается */
+}
+
+.small-image {
+    width: 50px; /* Устанавливаем ширину изображения */
+    height: auto; /* Высота будет автоматически подстраиваться под ширину */
+}
+
+
+
+
+
+
+
+
+/* Стили для страницы "О нас" */
+.about-us {
+    margin-top: 20px; /* Добавляем отступ сверху */
+}
+
+    .about-us h2 {
+        margin-bottom: 15px;
+    }
+
+.list-group {
+    margin-bottom: 20px;
+}
+
+.team {
+    margin-top: 30px;
+}
+
+    .team img {
+        margin-bottom: 10px;
+    }
+
+    .team h4 {
+        margin-top: 0;
+    }
+/* Стили для границ */
+.bordered-block {
+    border: 1px solid #ddd; /* Серый цвет границы */
+    padding: 20px; /* Отступы внутри блока */
+    margin-bottom: 20px; /* Отступ снизу блока */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.team .card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.col-md-12 {
+    margin-top: 30px;
+}
+
+
+
+.product-images {
+    display: flex;
+}
+
+.main-image {
+    width: 300px; /* пример */
+    height: auto;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail-image {
+    width: 50px; /* пример */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* styles.css */
+
+/* Общие стили для блога */
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.blog-post {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.blog-title {
+    font-size: 24px;
+    color: #333;
+}
+
+.posted-info {
+    color: #666;
+}
+
+.blog-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.read-more-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .read-more-link:hover {
+        text-decoration: underline;
+    }
+
+
+/* styles.css */
+
+/* стиль для прочитки блога */
+.blog-post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.blog-post-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.blog-post-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.comment-form {
+    margin-top: 30px;
+}
+
+.comment-heading {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.save {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .save:hover {
+        background-color: #0056b3;
+    }
+
+.comment {
+    margin-top: 30px;
+}
+
+.comment-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.comment-author {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.comment-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.back-link {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+    .back-link:hover {
+        text-decoration: underline;
+    }
+
+/* Убираем слово "Комментарий" у поля ввода */
+.comment-form textarea {
+    margin-bottom: 10px;
+}
+
+.comment-form label {
+    display: none;
+}
+
+
+/* styles.css */
+/* Стили для контактной страницы */
+.contact-container {
+    max-width: 800px;
+    margin: 20px auto; /* Центрируем блок на странице */
+    padding: 20px;
+    background-color: #f2f2f2; /* Серый фон */
+    border-radius: 10px; /* Скругляем углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень */
+    font-size: 24px; /* Размер текста */
+    color: #333; /* Цвет текста */
+}
+
+    .contact-container h3 {
+        text-align: left; /* Выравниваем текст "Контакты" влево */
+    }
+
+
+    /*каталог*/
+
+.price-input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 80px; /* Ширина поля ввода */
+}
+
+.price-input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 80px; /* Ширина поля ввода */
+}
+.product-catalog {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+.discount-label {
+    position: absolute;
+    top: 10px; /* Положение сверху */
+    right: 10px; /* Положение слева */
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+.product-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос элементов на следующую строку */
+}
+
+.product-item {
+    
+    border: 1px solid #ddd;
+    margin: 10px; /* Отступ между товарами */
+    padding: 15px;
+    width: calc(50% - 20px); /* Ширина товара с учетом отступов */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+    background-color: #f9f9f9; /* Фоновый цвет товара */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тень */
+    transition: transform 0.3s ease; /* Добавляем плавный переход для transform */
+    position: relative; /* Чтобы позиционировать метку скидки */
+}
+    .product-item.single-product {
+        flex-basis: 100%; /* Занимает всю ширину контейнера */
+        margin-right: 0; /* Убираем правый отступ */
+    }
+
+
+
+    .product-item:hover {
+        transform: scale(1.1); /* Увеличиваем масштаб карточки при наведении */
+    }
+
+.product-info {
+    width: 100%; /* Ширина блока информации */
+}
+
+.product-name {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px; /* Уменьшаем отступ между названием и изображением */
+}
+
+.product-image {
+    max-width: 120px; /* Увеличиваем максимальную ширину изображения */
+    max-height: 120px; /* Увеличиваем максимальную высоту изображения */
+    display: block;
+    margin: 0 auto; /* Центрируем изображение по горизонтали */
+    overflow: hidden; /* Обрезаем изображение по границам блока */
+}
+
+.product-price {
+    font-size: 1em; /* Уменьшаем размер шрифта цены */
+    color: #007BFF;
+    margin-bottom: 3px; /* Уменьшаем отступ между ценой и нижними блоками */
+}
+
+.cart-info {
+    margin-bottom: 3px; /* Уменьшаем отступ между информацией о корзине и нижними блоками */
+    color: #007BFF; /* Цвет для товаров в корзине */
+}
+
+.add-to-cart-form {
+    text-align: right; /* Выравниваем кнопку по центру */
+}
+
+.add-to-cart-btn {
+    background-color: #28A745;
+    color: #fff;
+    padding: 8px 20px; /* Увеличиваем отступы кнопки */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона кнопки */
+}
+
+    .add-to-cart-btn:hover {
+        background-color: #218838;
+    }
+
+/*КОРЗИНА*/
+
+
+.cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cart-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 20px;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cart-action-link {
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.cart-summary {
+    font-size: 1.1em;
+    margin-top: 20px;
+    text-align: right;
+}
+
+#checkoutBtn {
+    margin-top: 20px;
+    float: right;
+}
+
+
+
+
+#orderModal {
+    display: none;
+}
+
+
+/*МОДАЛЬНОЕ ОКНО*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-dialog {
+    margin: 10% auto;
+    max-width: 30%; /* Уменьшаем максимальную ширину модального окна */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.modal-title {
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-body,
+.modal-footer {
+    padding: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+
+/*мои заказы*/
+
+
+/* Стили для контейнера заказов */
+.orders-container {
+    margin-top: 20px;
+}
+
+/* Стили для элемента заказа */
+.order-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Стили для информации о заказе */
+.order-info {
+    margin-bottom: 10px;
+}
+
+    .order-info .order-id {
+        font-weight: bold;
+    }
+
+    .order-info .order-date {
+        color: #777;
+    }
+
+    .order-info .order-status {
+        font-style: italic;
+    }
+
+/* Стили для списка товаров в заказе */
+.order-items-list {
+    list-style: none;
+    padding: 0;
+}
+
+.order-item-details {
+    margin-bottom: 5px;
+}
+
+/* Стили для имени товара */
+.product-name {
+    cursor: pointer;
+    color: #337ab7;
+    text-decoration: underline;
+}
+
+    .product-name:hover {
+        color: #23527c;
+    }
+
+/* Стили для кнопки отмены заказа */
+.cancel-btn {
+    margin-top: 10px;
+}
+
+/* Стили для сообщения о отсутствии заказов */
+.no-orders-message {
+    font-style: italic;
+    color: #777;
+}
+
+
+
+
+
+        /* создание блога */
+
+.blog-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.blog-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-form h3 {
+    color: #333;
+}
+
+.blog-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.blog-form input[type="text"],
+.blog-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.blog-form button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blog-form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* создание товара */
+
+.product-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .product-form h2 {
+        color: #333;
+    }
+
+    .product-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .product-form input[type="text"],
+    .product-form input[type="number"],
+    .product-form select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .product-form button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .product-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+
+/*регистрация*/
+.registration-form-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.registration-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .registration-form h2 {
+        color: #333;
+    }
+
+    .registration-form label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .registration-form input[type="text"],
+    .registration-form input[type="email"],
+    .registration-form input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .registration-form button {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        .registration-form button:hover {
+            background-color: #0056b3;
+        }
+
+
+

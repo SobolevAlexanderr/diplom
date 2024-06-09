@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="product-form-container">
+    <h2>Добавление товара</h2>
+
+    <form method="post" enctype="multipart/form-data" class="product-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить товар</button>
+    </form>
+</div>
+{% endblock %}

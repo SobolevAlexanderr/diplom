@@ -1,0 +1,42 @@
+{% extends "app/layout.html" %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'app/content/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="orders-container">
+        <h1>Мои заказы</h1>
+
+        {% if orders %}
+        {% for order in orders %}
+        <div class="order-item">
+            <div class="order-info">
+                <span class="order-id">Заказ №{{ order.id }}</span>
+                <span class="order-date">Дата: {{ order.created_at|date:"d.m.Y H:i" }}</span>
+                <p class="order-status">Статус: {{ order.get_status_display }}</p>
+            </div>
+            <ul class="order-items-list">
+                {% for item in order.orderitem_set.all %}
+                <li class="order-item-details">
+                    <span class="product-name" onclick="location.href='{% url 'product_detail' item.product.id %}'">{{ item.product.name }}</span>
+                    <span class="quantity">Количество: {{ item.quantity }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+            {% if order.status == 'created' %}
+            <form method="post" action="{% url 'cancel_order' order.id %}" class="cancel-form">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger cancel-btn">Отменить заказ</button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% else %}
+        <p class="no-orders-message">У вас пока нет заказов.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="multi-image-upload">
+    {{ widget.input_type }}
+    {{ widget.name }}
+    <div class="uploaded-images">
+        {% for image in widget.value.all %}
+            <img src="{{ image.url }}" alt="">
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,104 @@
+{% extends "app/layout.html" %}
+
+
+
+{% block content %}
+<div class="product-catalog">
+    <h2>Каталог товаров</h2>
+
+    <label for="price-filter-min">Цена от:</label>
+    <input type="number" id="price-filter-min" onchange="filterByPrice()" class="price-input"><br>
+
+    <label for="price-filter-max">Цена до:</label>
+    <input type="number" id="price-filter-max" onchange="filterByPrice()" class="price-input">
+    <form method="get" action="{% url 'catalog' %}" class="search-form">
+        <input type="text" name="q" placeholder="Поиск по названию..." class="form-control">
+        <button type="submit" class="btn btn-primary">Поиск</button>
+    </form>
+    <label for="category-filter">Фильтр по категории:</label>
+    <select id="category-filter" onchange="filterByCategory(this.value)">
+        <option value="">Все категории</option>
+        {% for category in categories %}
+        <option value="{{ category }}">{{ category }}</option>
+        {% endfor %}
+
+    </select>
+
+    <div class="product-list">
+        {% for product in products %}
+        <div class="product-item" data-category="{{ product.category }}">
+
+            <div class="product-info">
+                <a href="{% url 'product_detail' product.id %}" class="product-name">{{ product.name }}</a>
+                <a href="{% url 'product_detail' product.id %}" class="product-image-link">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="product-image" />
+                </a>
+                {% if product.discount > 0 %}
+                <span class="discount-label">-{{ product.discount|floatformat:0 }}%</span>
+                Цена со скидкой: <span class="price-value">{{ product.discounted_price|floatformat:2 }}</span>
+                Старая цена: {{ product.price }}
+                {% else %}
+                Цена: <span class="price-value">{{ product.price }}</span>
+                {% endif %}
+
+
+                <p class="cart-info">Товаров в корзине: <span id="cart-items-count-{{ product.id }}">{{ product.cart_quantity }}</span></p>
+                <p class="product-price">Категория: {{ product.category }}</p>
+                <form method="post" action="{% url 'add_to_cart' product.id %}" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <button class="add-to-cart-btn" data-product-id="{{ product.id }}">Добавить в корзину</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    function filterByCategory(category) {
+        const items = document.querySelectorAll('.product-item');
+        items.forEach(item => {
+            if ((!category || item.dataset.category === category) && isPriceInRange(item)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    function isPriceInRange(item) {
+        const minPrice = document.getElementById('price-filter-min').value;
+        const maxPrice = document.getElementById('price-filter-max').value;
+        const priceElement = item.querySelector('.price-value');
+        const price = parseFloat(priceElement.textContent);
+        return (!minPrice || price >= minPrice) && (!maxPrice || price <= maxPrice);
+    }
+
+    function filterByPrice() {
+        const minPrice = document.getElementById('price-filter-min').value;
+        const maxPrice = document.getElementById('price-filter-max').value;
+        const items = document.querySelectorAll('.product-item');
+
+        items.forEach(item => {
+            const priceElement = item.querySelector('.price-value');
+            const price = parseFloat(priceElement.textContent);
+            if ((!minPrice || price >= minPrice) && (!maxPrice || price <= maxPrice)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    window.addEventListener('load', function () {
+        const productItems = document.querySelectorAll('.product-item');
+
+        if (productItems.length === 1) {
+            productItems[0].classList.add('single-product');
+        }
+    });
+</script>
+
+{% endblock %}
+
+
+

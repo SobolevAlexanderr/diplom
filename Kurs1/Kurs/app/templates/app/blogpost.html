@@ -1,0 +1,39 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="blog-post-container">
+    <h2 class="blog-post-title">{{ post_1.title }}</h2>
+
+    {% if post_1.image and post_1.image.url != '/media/temp.jpg' %}
+    <img src="{{ post_1.image.url }}" alt="Картинка статьи блога" class="blog-post-image" />
+    {% endif %}
+
+    <p class="blog-post-content">{{ post_1.content|linebreaksbr }}</p>
+
+    {% if user.is_authenticated %}
+    <form method="POST" class="comment-form">
+        <h3 class="comment-heading">Добавить комментарий</h3>
+        {% csrf_token %}
+        <div>
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Отправить комментарий</button>
+        </div>
+    </form>
+    {% else %}
+    <h3 class="comment-heading">Для добавления своего комментария, пожалуйста, авторизуйтесь</h3>
+    {% endif %}
+
+    <hr />
+
+    {% for comment in comments %}
+    <div class="comment">
+        <hr />
+        <h6 class="comment-date">{{ comment.date }}</h6>
+        <h5 class="comment-author">{{ comment.author }}</h5>
+        <p class="comment-text">{{ comment.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
+
+    <p><a href="{% url 'blog' %}" class="back-link">НАЗАД</a></p>
+</div>
+{% endblock %}

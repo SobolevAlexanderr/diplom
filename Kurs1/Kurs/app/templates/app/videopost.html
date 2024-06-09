@@ -1,0 +1,20 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="video-container">
+    <h1>{{ title }} Видео </h1>
+    <hr />
+
+    <div class="video-item">
+        <h2>Видео-ролик 1</h2>
+        <video src="/media/hol.mp4" controls="controls" width="400" height="300" poster="/media/hol1.jpeg"></video>
+    </div>
+
+    <hr />
+
+    <div class="video-item">
+        <h2>Видео-ролик 2</h2>
+        <video src="/media/tel.mp4" controls="controls" width="400" height="300" poster="/media/tel1.jpeg"></video>
+    </div>
+</div>
+{% endblock %}

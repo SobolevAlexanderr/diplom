@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8b197702-35ac-4a87-ac50-081e861ec090}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId>Global|PythonCore|3.9</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\favicons.ico" />
+    <Content Include="app\static\app\content\hhh.jpg" />
+    <Content Include="app\static\app\content\icona.png" />
+    <Content Include="app\static\app\content\icond.png" />
+    <Content Include="app\static\app\content\iconm.png" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\content\sss.jpg" />
+    <Content Include="app\static\app\content\styles.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\static\js\main.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\add_product.html" />
+    <Content Include="app\templates\app\all_orders.html" />
+    <Content Include="app\templates\app\anketa.html" />
+    <Content Include="app\templates\app\blog.html" />
+    <Content Include="app\templates\app\blogpost.html" />
+    <Content Include="app\templates\app\cart.html" />
+    <Content Include="app\templates\app\catalog.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\create_order.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\links.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+    <Content Include="app\templates\app\my_orders.html" />
+    <Content Include="app\templates\app\newpost.html" />
+    <Content Include="app\templates\app\product_detail.html" />
+    <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\videopost.html" />
+    <Content Include="media\58c1c355088c22e5b5d5610de88759ca.jpg" />
+    <Content Include="media\products\1.jpg" />
+    <Content Include="media\products\AW7yLeDD_Z8.jpg" />
+    <Content Include="media\products\lrmx7YxevO4.jpg" />
+    <Content Include="media\products\Mikha_filippov_kartinka.png" />
+    <Content Include="media\products\P091029005.jpg_1557884838.jpg" />
+    <Content Include="media\product_images\1383512.jpg" />
+    <Content Include="media\product_images\26275375_266051627260674_8794319209304686592_n.jpg" />
+    <Content Include="media\product_images\26275375_266051627260674_8794319209304686592_n_JN611fb.jpg" />
+    <Content Include="media\product_images\58c1c355088c22e5b5d5610de88759ca_2.jpg" />
+    <Content Include="media\product_images\bTqrKSWSRfA.jpg" />
+    <Content Include="media\product_images\c6c55162e526ba9b6b26be07488f637d_1.jpg" />
+    <Content Include="media\product_images\photo_2023-12-17_19-15-15.jpg" />
+    <Content Include="readme.html" />
+    <Content Include="requirements.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app\cart.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\migrations\0001_initial.py" />
+    <Compile Include="app\migrations\0002_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0003_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0004_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0005_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0006_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0007_alter_blog_id_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0008_alter_blog_options_alter_blog_posted_and_more.py" />
+    <Compile Include="app\migrations\0009_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0010_blog_author_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0011_alter_blog_posted.py" />
+    <Compile Include="app\migrations\0012_alter_blog_posted_comment.py" />
+    <Compile Include="app\migrations\0013_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0014_alter_comment_options_blog_image_alter_blog_posted_and_more.py" />
+    <Compile Include="app\migrations\0015_category_alter_blog_posted_alter_comment_date_and_more.py" />
+    <Compile Include="app\migrations\0016_product_image_product_price_alter_blog_posted_and_more.py" />
+    <Compile Include="app\migrations\0017_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0018_alter_blog_posted_alter_comment_date_and_more.py" />
+    <Compile Include="app\migrations\0019_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0020_alter_blog_posted_alter_comment_date_and_more.py" />
+    <Compile Include="app\migrations\0021_alter_blog_posted_alter_comment_date_order.py" />
+    <Compile Include="app\migrations\0022_remove_order_cart_order_products_alter_blog_posted_and_more.py" />
+    <Compile Include="app\migrations\0023_alter_blog_posted_alter_comment_date_orderitem.py" />
+    <Compile Include="app\migrations\0024_remove_order_products_order_items_orderitem_order_and_more.py" />
+    <Compile Include="app\migrations\0025_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0026_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0027_order_status_alter_blog_posted_alter_comment_date.py" />
+    <Compile Include="app\migrations\0028_alter_blog_posted_alter_comment_date_and_more.py" />
+    <Compile Include="app\migrations\0029_alter_blog_posted_alter_comment_date_and_more.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="ZLO\settings.py" />
+    <Compile Include="ZLO\urls.py" />
+    <Compile Include="ZLO\wsgi.py" />
+    <Compile Include="ZLO\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app" />
+    <Folder Include="app\migrations" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content" />
+    <Folder Include="app\static\app\fonts" />
+    <Folder Include="app\static\app\scripts" />
+    <Folder Include="app\static\js" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app" />
+    <Folder Include="media" />
+    <Folder Include="media\products" />
+    <Folder Include="media\product_images" />
+    <Folder Include="ZLO" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.9" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>

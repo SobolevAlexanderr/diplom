@@ -1,0 +1,120 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class="jumbotron">
+    <h1>Псковский центр деревянных строений</h1>
+    <p>
+        На строительном рынке Пскова наша компания работает с 2007 г. Деятельность компании: строительство домов, возведение фундаментов, монтаж кровель. Также осуществляем монтаж домов под ключ. Наши специалисты сделают для Вас индивидуальный проект Вашего дома или бани, а также пристройки или беседки - совершенно бесплатно.
+    </p>
+</div>
+<div class="jumbotron">
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+
+    <ol class="carousel-indicators">
+
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+
+
+
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+
+        <div class="item active">
+
+            <img src="{% static 'app/content/банякарусель.png'%} " alt="Первый слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+
+                    о наших банях
+
+                    <a class="btn btn-default" href="blogpost/1">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src="{% static 'app/content/домкарусель.jpg'%}" alt="Второй слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    о наших домах
+
+                    <a class="btn btn-default" href="blogpost/2">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="item">
+
+            <img src=" {% static 'app/content/беседкакарусель.jpg'%} " alt="Третий слайд" class="img-responsive" />
+
+            <div class="carousel-caption" role="option">
+
+                <p>
+
+                    у нас новая беседка
+
+                    <a class="btn btn-default" href="blogpost/4">
+
+                        Читать далее
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+        <span class="sr-only">Previous</span>
+
+    </a>
+
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+        <span class="sr-only">Next</span>
+
+    </a>
+
+</div>
+<div
+</div>
+
+{% endblock %}
